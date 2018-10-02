@@ -109,13 +109,17 @@ public class JFrame_GUI extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		
+		// ----------------- DEFINITIONS OF THE PHOTOS----------------------------------------------------
 		// Name of the photos to call in the photo_Label
 		final String names[] = {"Mr-Icon.jpg", "Mrs-Icon.jpg", "Ms-Icon.jpg", "Darth-Vader.jpg"};
 		
 		// Items to be called.
 		final Icon[] icons = {new ImageIcon(getClass().getResource(names[0])), new ImageIcon(getClass().getResource(names[1])), 
 				  new ImageIcon(getClass().getResource(names[2])), new ImageIcon(getClass().getResource(names[3]))};
+		// ----------------- END DEFINITION OF THE PHOTOS ------------------------------------------------
+		
+		// FOR EXAMPLE: SINCE THE ORDER IS MR, MRS, MS AND DARTH VADER, IN THE DROPDOWN LIST, THE STRING NAMES MUST BE IN THIS
+		// SAME ORDER OR ELSE IT WILL DISPLAY THE WRONG PHOTO
 		
 		// Instances of the Labels and Panels are here.
 		
@@ -454,6 +458,9 @@ public class JFrame_GUI extends JFrame {
 		maidenName_txtfld.setColumns(10);
 		
 		JComboBox Salutation_cmbbox = new JComboBox();
+		
+		// ---------------- USES THE INDEX TO SET THE PHOTOS USED FOR THE DISPLAY --------------------
+		// Make sure that the order of the photos match the index defined in the DEFINITION OF PHOTOS, LOOK UP AT THE BEGINNING
 		Salutation_cmbbox.addItemListener(new ItemListener() 
 		{
 			public void itemStateChanged(ItemEvent event) 
@@ -464,6 +471,7 @@ public class JFrame_GUI extends JFrame {
 			}
 		});
 		Salutation_cmbbox.setModel(new DefaultComboBoxModel(new String[] {"Mr.", "Mrs.", "Ms.", "Darth"}));
+		// --------------- END OF THE INDEX SET -----------------------------------------------------
 		
 		GroupLayout gl_Information_Panel = new GroupLayout(Information_Panel);
 		gl_Information_Panel.setHorizontalGroup(
